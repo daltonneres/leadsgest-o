@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Completo - Sistema de Leads</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1>💼 Sistema de Gestão de Leads — DEMO Profissional</h1>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Cards de Métricas -->
+    <section class="metrics-cards">
+      <div class="card">
+        <h3>Total de Leads</h3>
+        <p id="totalLeads">0</p>
+      </div>
+      <div class="card">
+        <h3>Convertidos</h3>
+        <p id="convertedLeads">0</p>
+      </div>
+      <div class="card">
+        <h3>Em Contato</h3>
+        <p id="contactLeads">0</p>
+      </div>
+      <div class="card">
+        <h3>Novos</h3>
+        <p id="newLeads">0</p>
+      </div>
+      <div class="card">
+        <h3>Desistiu</h3>
+        <p id="desistiuLeads">0</p>
+      </div>
+      <div class="card">
+        <h3>Sem Retorno</h3>
+        <p id="semRetornoLeads">0</p>
+      </div>
+    </section>
+
+    <!-- Formulário -->
+    <section class="form-section">
+      <h2>Adicionar Novo Lead</h2>
+      <form id="leadForm">
+        <input type="text" id="name" placeholder="Nome do Lead" required>
+        <input type="email" id="email" placeholder="E-mail" required>
+        <select id="status">
+          <option value="Novo">Novo</option>
+          <option value="Em Contato">Em Contato</option>
+          <option value="Convertido">Convertido</option>
+          <option value="Desistiu">Desistiu</option>
+          <option value="Sem Retorno">Sem Retorno</option>
+        </select>
+        <button type="submit">Adicionar Lead</button>
+        <button type="button" id="resetBtn">Resetar Demo</button>
+      </form>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filter-section">
+      <input type="text" id="searchInput" placeholder="Buscar por nome ou email...">
+      <select id="statusFilter">
+        <option value="Todos">Todos</option>
+        <option value="Novo">Novo</option>
+        <option value="Em Contato">Em Contato</option>
+        <option value="Convertido">Convertido</option>
+        <option value="Desistiu">Desistiu</option>
+        <option value="Sem Retorno">Sem Retorno</option>
+      </select>
+    </section>
+
+    <!-- Tabela de Leads -->
+    <section class="leads-section">
+      <h2>Leads Cadastrados</h2>
+      <div class="table-container">
+        <table id="leadsTable">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Dashboard Gráficos -->
+    <section class="dashboard-section">
+      <h2>📊 Dashboard</h2>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Status de Leads</h3>
+          <canvas id="statusChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Leads por Mês</h3>
+          <canvas id="monthlyChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>💻 Demo funcional com dados fictícios — Desenvolvido por <a href="https://github.com/daltonneres" target="_blank">Dalton Neres</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
